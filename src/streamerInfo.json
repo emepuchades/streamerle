@@ -5,7 +5,7 @@
         "birthday": "1984-04-23T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "834.830"
+        "followers": "834830"
     },
     {
         "id": 1,
@@ -13,7 +13,7 @@
         "birthday": "1990-02-13T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "12.100.000"
+        "followers": "12100000"
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
         "birthday": "1998-07-23T00:00:00",
         "city": "MX",
         "gender": "M",
-        "followers": "4.600.000"
+        "followers": "4600000"
     },
     {
         "id": 3,
@@ -29,7 +29,7 @@
         "birthday": "1995-03-26T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "11.300.000"
+        "followers": "11300000"
     },
     {
         "id": 4,
@@ -37,6 +37,6 @@
         "birthday": "1998-02-28T00:00:00",
         "city": "MX",
         "gender": "F",
-        "followers": "4.700.000"
+        "followers": "4700000"
     }
 ]

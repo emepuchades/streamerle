@@ -1,6 +1,24 @@
 import React from 'react'
 
 function BoardItemComponent({ streamers, streamerGuess }) {
+
+    function nFormatter(num, digits) {
+        const lookup = [
+            { value: 1, symbol: "" },
+            { value: 1e3, symbol: "k" },
+            { value: 1e6, symbol: "M" },
+            { value: 1e9, symbol: "G" },
+            { value: 1e12, symbol: "T" },
+            { value: 1e15, symbol: "P" },
+            { value: 1e18, symbol: "E" }
+        ];
+        const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+        var item = lookup.slice().reverse().find(function (item) {
+            return num >= item.value;
+        });
+        return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol : "0";
+    }
+
     return (
         <div>
             {streamers.length === 0 ?
@@ -8,7 +26,7 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                 :
                 <div className='container-board sm:mt-6' >
                     <div className="width-full">
-                        <div>
+                        <div className='container-mb'>
                             {streamers.map((streamer, index) => {
                                 return (
                                     <div className="container-board-answers" key={index}>
@@ -26,7 +44,7 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                         <div className="continer-answer">
                                             <div className="answer color-answer">
                                                 {streamerGuess.followers > streamer.followers ? <i class="bi bi-arrow-down"></i> : <i class="bi bi-arrow-up"></i>}
-                                                {streamer.followers}
+                                                {nFormatter(streamer.followers, streamer.followers.length)}
                                             </div>
                                         </div>
                                         <div className='continer-answer'>
@@ -43,6 +61,20 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                 )
 
                             })}
+                            <div className="container-board-answers" >
+                                <div className="default-answer">
+                                    AÑOS
+                                </div>
+                                <div className="default-answer">
+                                    SEGUIDORES
+                                </div>
+                                <div className='default-answer'>
+                                    GÉNERO
+                                </div>
+                                <div className='default-answer'>
+                                    PAÍS
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
