@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+
 .App {
   text-align: center;
   height: 100vh;
   width: 100%;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .row_tryboard {
@@ -11,11 +14,11 @@
 }
 
 .suucess {
-  background-color: chartreuse;
+  background-color: #5EA797;
 }
 
 .error {
-  background-color: tomato;
+  background-color: #EE723F;
 }
 
 .navbar-content {
@@ -27,6 +30,8 @@
   justify-content: space-between;
   position: relative;
   z-index: 1;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .container-board {
@@ -39,6 +44,10 @@
   align-items: center;
 }
 
+.navbar-container {
+  border-bottom: 1px solid #E2E8F0;
+  margin-bottom: 40px;
+}
 
 .container-board-answers {
   display: flex;
@@ -81,12 +90,23 @@
   padding-top: 20px;
 }
 
+.default-answer {
+  display: flex;
+  width: 25%;
+  flex-shrink: 0;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1.75rem;
+  padding-top: 20px;
+}
+
+
 .answer{
   display: flex;
   width: 100%;
   overflow: hidden;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
+  margin-left: 0.65rem;
+  margin-right: 0.65rem;
   font-weight: 700;
   justify-content: center;
   align-items: center;
@@ -118,4 +138,32 @@
   .sm\:mt-6 {
     margin-top: 1.5rem;
   }
+}
+
+@media only screen and (max-device-width: 414px) {
+  .container-board{
+    width: 90%;
+  }
+
+  .container-mb {
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-device-width: 280px) {
+  .answer{
+   font-size: 16px;
+   margin-left: 0.05rem;
+   margin-right: 0.05rem;
+  }
+  .container-board {
+    width: 95%;
+ }
+  .container-mb {
+    margin: 1px;
+  }
+  .default-answer {
+    font-size: 13px;
+  }
+  
 }

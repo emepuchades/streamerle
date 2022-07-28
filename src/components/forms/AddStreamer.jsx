@@ -9,7 +9,7 @@ function AddStreamer({ uploadInput, valueInput }) {
     }
     return (
         <form className='container-board'>
-            <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} placeholder='Search streamer' />
+            <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} placeholder='Busca al streamer' />
         </form>
     )
 }
