@@ -1,38 +1,121 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.row_tryboard {
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.suucess {
+  background-color: chartreuse;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.error {
+  background-color: tomato;
+}
+
+.navbar-content {
+  width: 100%;
   align-items: center;
+  background: #fff;
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.container-board {
+  display: flex;
+  width: 100%;
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container-board-answers {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.container-name {
+  width: 100%;
+  flex-grow: 1;
+  text-align: center;
+  padding-bottom: 0.5rem;
+
+}
+
+.name-streamer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.continer-answer {
+  display: flex;
+  width: 25%;
+  flex-shrink: 0;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-top: 20px;
+}
+
+.answer{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  border-radius: 9999px;
+}
+
+.color-answer {
+  background-color: #f1f1f1;
+  font-size: 15px;
+}
+
+.bg-slate-400 {
+  opacity: 1;
+  background-color: rgb(148 163 184/var(--opacity));
+}
+.width-full {
+  width: 100%;
+}
+
+.input-add-streamer {
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 20px;
+}
+
+@media (min-width: 640px) {
+  .sm\:mt-6 {
+    margin-top: 1.5rem;
   }
 }

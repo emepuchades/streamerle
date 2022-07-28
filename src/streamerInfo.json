@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "name": "Knekro",
+        "birthday": "1984-04-23T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "834.830"
+    },
+    {
+        "id": 1,
+        "name": "Rubius",
+        "birthday": "1990-02-13T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "12.100.000"
+    },
+    {
+        "id": 2,
+        "name": "ElMariana",
+        "birthday": "1998-07-23T00:00:00",
+        "city": "MX",
+        "gender": "M",
+        "followers": "4.600.000"
+    },
+    {
+        "id": 3,
+        "name": "Ibai",
+        "birthday": "1995-03-26T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "11.300.000"
+    },
+    {
+        "id": 4,
+        "name": "AriGamePlays",
+        "birthday": "1998-02-28T00:00:00",
+        "city": "MX",
+        "gender": "F",
+        "followers": "4.700.000"
+    }
+]
