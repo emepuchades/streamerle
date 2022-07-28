@@ -134,6 +134,17 @@
   font-size: 20px;
 }
 
+.before-start {
+  margin: 10px;
+}
+
+.img-start {
+  width: 200px;
+}
+
+.text-before-start {
+  font-size: 25px;
+}
 @media (min-width: 640px) {
   .sm\:mt-6 {
     margin-top: 1.5rem;
