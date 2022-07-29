@@ -8,6 +8,9 @@ This is a Wordle type game, where you have to guess the streamer. According to s
 * ReactJS
 * Bootstrap
 
+## Screenshot
+![Streamle](https://user-images.githubusercontent.com/100128850/181706654-f7ebcd03-3006-487b-8b30-6b17eeeda7ae.png)
+
 ## Installation
 
 A little intro about the installation. 
