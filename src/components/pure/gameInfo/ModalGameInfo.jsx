@@ -1,8 +1,13 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Item from '../Item';
+import { Streamer } from '../../../models/streamer.class'
 
 function ModalGameInfo({ show, handleClose}) {
+    const streamer = new Streamer('4', 'Knekro', '32', '1000000' , 'M', 'ES', 'TW')
+    const streamerGuess = new Streamer('4', 'Ibai', '24', '12000000' , 'M', 'MX', 'TW')
+
     return (
         <>
             <Modal show={show} onHide={handleClose}>
@@ -13,6 +18,8 @@ function ModalGameInfo({ show, handleClose}) {
                     Dispones de 5 intentos para adivinar al streamer.
                     Para empezar el juego, tienes que escribir el nombre de un streamer y clicar en él.
                     Al elegir el streamer aparecerá lo siguiente:
+                    
+                    <Item index={1} streamer={streamer} streamerGuess={streamerGuess} />
 
                     Aquí tenéis 5 características de los streamers como es la edad, los seguidores(se cuentan los seguidores de la plataforma en la que hacen stream),
                     género, plataforma donde hace stream y país.
