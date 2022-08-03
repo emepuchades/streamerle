@@ -14,11 +14,11 @@
 }
 
 .suucess {
-  background-color: #5EA797;
+  background-color: #67a561;
 }
 
 .error {
-  background-color: #EE723F;
+  background-color: #E42819;
 }
 
 .navbar-content {
@@ -147,6 +147,10 @@
 
 .before-start {
   margin: 10px;
+}
+.button-icon {
+  background: none;
+  border: none;
 }
 
 .img-start {
