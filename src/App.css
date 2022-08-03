@@ -37,7 +37,17 @@
 .container-board {
   display: flex;
   width: 100%;
-  max-width: 24rem;
+  max-width: 29rem;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-input {
+  display: flex;
+  width: 100%;
+  max-width: 29rem;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -82,7 +92,7 @@
 
 .continer-answer {
   display: flex;
-  width: 25%;
+  width: 20%;
   flex-shrink: 0;
   justify-content: center;
   font-size: 1.25rem;
@@ -92,7 +102,7 @@
 
 .default-answer {
   display: flex;
-  width: 25%;
+  width: 20%;
   flex-shrink: 0;
   justify-content: center;
   font-size: 15px;
@@ -153,7 +163,11 @@
 
 @media only screen and (max-device-width: 414px) {
   .container-board{
-    width: 90%;
+    width: 100%;
+  }
+
+  .container-input {
+    width: 95%;
   }
 
   .container-mb {
@@ -168,8 +182,11 @@
    margin-right: 0.05rem;
   }
   .container-board {
-    width: 95%;
+    width: 100%;
  }
+ .container-input {
+  width: 95%;
+}
   .container-mb {
     margin: 1px;
   }

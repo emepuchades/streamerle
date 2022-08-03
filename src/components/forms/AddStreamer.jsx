@@ -8,7 +8,7 @@ function AddStreamer({ uploadInput, valueInput }) {
         uploadInput(nameRef.current.value)
     }
     return (
-        <form className='container-board'>
+        <form className='container-input'>
             <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} placeholder='Busca al streamer' />
         </form>
     )
