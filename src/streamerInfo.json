@@ -5,7 +5,8 @@
         "birthday": "1984-04-23T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "834830"
+        "followers": "834830",
+        "platform":"TW"
     },
     {
         "id": 1,
@@ -13,7 +14,8 @@
         "birthday": "1990-02-13T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "12100000"
+        "followers": "z",
+        "platform":"TW"
     },
     {
         "id": 2,
@@ -21,7 +23,9 @@
         "birthday": "1998-07-23T00:00:00",
         "city": "MX",
         "gender": "M",
-        "followers": "4600000"
+        "followers": "4600000",
+        "platform":"TW"
+
     },
     {
         "id": 3,
@@ -29,7 +33,8 @@
         "birthday": "1995-03-26T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "11300000"
+        "followers": "11300000",
+        "platform":"TW"
     },
     {
         "id": 4,
@@ -37,6 +42,16 @@
         "birthday": "1998-02-28T00:00:00",
         "city": "MX",
         "gender": "F",
-        "followers": "4700000"
+        "followers": "4700000",
+        "platform":"TW"
+    },
+    {
+        "id": 5,
+        "name": "Willyrex",
+        "birthday": "1993-05-09T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "17200000",
+        "platform":"YT"
     }
 ]

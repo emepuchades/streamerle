@@ -19,7 +19,7 @@ function BoardComponent() {
         const streamer = allStreamers[rand]
         const age = ageCalculate(streamer.birthday)
         return (
-            setStreamerGuess(new Streamer(streamer.id, streamer.name, age, streamer.followers, streamer.gender, streamer.city)
+            setStreamerGuess(new Streamer(streamer.id, streamer.name, age, streamer.followers, streamer.gender, streamer.city, streamer.platform)
             )
         )
     }, []);
@@ -55,7 +55,7 @@ function BoardComponent() {
         const foundStreamer = allStreamers[id]
         const tryStreamersTemp = [...tryStreamers]
         const age = ageCalculate(foundStreamer.birthday)
-        const newStreamerTry = new Streamer(foundStreamer.id, foundStreamer.name, age, foundStreamer.followers, foundStreamer.gender, foundStreamer.city)
+        const newStreamerTry = new Streamer(foundStreamer.id, foundStreamer.name, age, foundStreamer.followers, foundStreamer.gender, foundStreamer.city, foundStreamer.platform)
         tryStreamersTemp.push(newStreamerTry)
         setTryStreamers(tryStreamersTemp)
         setValueInput('')
