@@ -1,5 +1,6 @@
 import React from 'react'
 import startLogo from '../../assets/icon-start.png'; 
+import ReactCountryFlag from "react-country-flag";
 
 function BoardItemComponent({ streamers, streamerGuess }) {
 
@@ -58,7 +59,7 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                         </div>
                                         <div className='continer-answer'>
                                             <div className={streamer.city === streamerGuess.city ? 'answer suucess' : 'answer error'}>
-                                                {streamer.city}
+                                            <ReactCountryFlag countryCode={streamer.city} />
                                             </div>
                                         </div>
                                     </div>
