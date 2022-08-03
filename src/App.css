@@ -122,6 +122,7 @@
   align-items: center;
   aspect-ratio: 1/1;
   border-radius: 9999px;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
 }
 
 .color-answer {

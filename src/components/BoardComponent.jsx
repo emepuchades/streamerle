@@ -40,7 +40,6 @@ function BoardComponent() {
     function ageCalculate(date) {
         var today = new Date();
         var birthday = new Date(date);
-        console.log('birthdate', birthday)
         var age = today.getFullYear() - birthday.getFullYear();
         var m = today.getMonth() - birthday.getMonth();
 

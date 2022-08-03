@@ -48,8 +48,9 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                             </div>
                                         </div>
                                         <div className="continer-answer">
-                                            <div className={streamer.age === streamerGuess.age ? 'answer suucess' : 'answer color-answer'} >
-                                                {streamerGuess.age > streamer.age ? <i class="bi bi-arrow-down"></i> : <i class="bi bi-arrow-up"></i>}
+                                            <div className={streamer.birthday === streamerGuess.birthday ? 'answer suucess' : 'answer color-answer'} >
+                                                {streamer.birthday === streamerGuess.birthday ? null :
+                                                    streamerGuess.birthday < streamer.birthday ? <i class="bi bi-arrow-down"></i> : <i class="bi bi-arrow-up"></i>}
                                                 {streamer.birthday}
                                             </div>
                                         </div>
@@ -66,7 +67,6 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                         </div>
                                         <div className='continer-answer'>
                                             <div className={streamer.platform === streamerGuess.platform ? 'answer suucess' : 'answer error'}>
-                                            {console.log('plataform', streamer.platform)}
                                                 {getPlatform(streamer.platform)}
                                             </div>
                                         </div>
@@ -90,7 +90,7 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                     GÉNERO
                                 </div>
                                 <div className='default-answer'>
-                                   PLATAFORMA
+                                    PLATAFORMA
                                 </div>
                                 <div className='default-answer'>
                                     PAÍS
