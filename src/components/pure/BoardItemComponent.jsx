@@ -22,9 +22,9 @@ function BoardItemComponent({ streamers, streamerGuess }) {
     function getPlatform(platform) {
         switch (platform) {
             case 'TW':
-                return <i class="bi bi-twitch"></i>;
+                return <i className="bi bi-twitch"></i>;
             default:
-                return <i class="bi bi-youtube"></i>
+                return <i className="bi bi-youtube"></i>
         }
     }
 
@@ -50,13 +50,13 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                                         <div className="continer-answer">
                                             <div className={streamer.birthday === streamerGuess.birthday ? 'answer suucess' : 'answer color-answer'} >
                                                 {streamer.birthday === streamerGuess.birthday ? null :
-                                                    streamerGuess.birthday < streamer.birthday ? <i class="bi bi-arrow-down"></i> : <i class="bi bi-arrow-up"></i>}
+                                                    streamerGuess.birthday < streamer.birthday ? <i className="bi bi-arrow-down"></i> : <i className="bi bi-arrow-up"></i>}
                                                 {streamer.birthday}
                                             </div>
                                         </div>
                                         <div className="continer-answer">
                                             <div className="answer color-answer">
-                                                {streamerGuess.followers > streamer.followers ? <i class="bi bi-arrow-down"></i> : <i class="bi bi-arrow-up"></i>}
+                                                {parseInt(streamerGuess.followers) < parseInt(streamer.followers) ? <i className="bi bi-arrow-down"></i> : <i className="bi bi-arrow-up"></i>}
                                                 {nFormatter(streamer.followers, streamer.followers.length)}
                                             </div>
                                         </div>
