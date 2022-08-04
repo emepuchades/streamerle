@@ -31,26 +31,33 @@ function BoardComponent() {
             localStorage.setItem('stats', JSON.stringify([0, 0, 0, 0]));
             localStorage.setItem('gameWons', JSON.stringify(0));
             localStorage.setItem('gamePlays', JSON.stringify(0));
+            localStorage.setItem('winDistribution', JSON.stringify([0,0,0,0,0]));
         }
-
         return (
             setStreamerGuess(new Streamer(streamer.id, streamer.name, age, streamer.followers, streamer.gender, streamer.city, streamer.platform)
             )
         )
     }, []);
 
-
-
-
     function updateLocalStorage(isWon) {
         const statsLocal = JSON.parse(localStorage.getItem('stats'));
         const numGames = JSON.parse(localStorage.getItem('gamePlays'));
         const gameWon = JSON.parse(localStorage.getItem('gameWons'));
+        const winDistribution = JSON.parse(localStorage.getItem('winDistribution'));
+        const numTry = tryStreamers.length
+               
+        const newWin = winDistribution.map((position, index) => {
+            if (numTry === index) {
+               return  position + 1
+            }
+            return position
+        })
 
         localStorage.setItem('lastGameDate', JSON.stringify(new Date()));
         localStorage.setItem('lastStreamer', JSON.stringify(streamerGuess.name));
         localStorage.setItem('isWon', JSON.stringify(isWon));
         if(isWon){localStorage.setItem('gameWons', JSON.stringify(gameWon + 1));}
+        localStorage.setItem('winDistribution', JSON.stringify(newWin));
         localStorage.setItem('gamePlays', JSON.stringify(numGames + 1));
         
         updateStats(statsLocal, isWon)
@@ -58,7 +65,6 @@ function BoardComponent() {
 
     function updateStats(oldStats, isWon) {
         const newStats = []
-        console.log(oldStats)
         const gameWon = JSON.parse(localStorage.getItem('gameWons'));
         const gamePlays = JSON.parse(localStorage.getItem('gamePlays'));
         const winrate = (gameWon / gamePlays) * 100;
