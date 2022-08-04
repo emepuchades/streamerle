@@ -13,7 +13,6 @@ function BoardComponent() {
     const [valueInput, setValueInput] = useState('')
     const [tryStreamers, setTryStreamers] = useState([])
     const [gameOver, setGameOver] = useState(false)
-    const [stats, setStats] = useState([0, 0, 0, 0]);
 
     const isModalShow = () => setGameOver(!gameOver);
 
@@ -25,9 +24,8 @@ function BoardComponent() {
         const age = ageCalculate(streamer.birthday)
 
         const statsLocal = JSON.parse(localStorage.getItem('stats'));
-        if (statsLocal) {
-            setStats(statsLocal);
-        } else {
+        
+        if (!statsLocal) {
             localStorage.setItem('stats', JSON.stringify([0, 0, 0, 0]));
             localStorage.setItem('gameWons', JSON.stringify(0));
             localStorage.setItem('gamePlays', JSON.stringify(0));
@@ -45,7 +43,7 @@ function BoardComponent() {
         const gameWon = JSON.parse(localStorage.getItem('gameWons'));
         const winDistribution = JSON.parse(localStorage.getItem('winDistribution'));
         const numTry = tryStreamers.length
-               
+
         const newWin = winDistribution.map((position, index) => {
             if (numTry === index) {
                return  position + 1

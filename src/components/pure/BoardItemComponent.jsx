@@ -17,7 +17,9 @@ function BoardItemComponent({ streamers, streamerGuess }) {
                         <div className='container-mb'>
                             {streamers.map((streamer, index) => {
                                 return (
-                                    <Item index={index} streamer={streamer} streamerGuess={streamerGuess}/>
+                                    <div key={index}>
+                                        <Item streamer={streamer} streamerGuess={streamerGuess} />
+                                    </div>
                                 )
 
                             })}

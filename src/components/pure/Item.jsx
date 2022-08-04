@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactCountryFlag from "react-country-flag";
 
-function Item({index, streamer, streamerGuess}) {
+function Item({streamer, streamerGuess}) {
    
     function nFormatter(num) {
         const lookup = [
@@ -28,7 +28,7 @@ function Item({index, streamer, streamerGuess}) {
     }
 
     return (
-        <div className="container-board-answers" key={index}>
+        <div className="container-board-answers">
             <div className="container-name">
                 <div className="name-streamer">
                     {streamer.name}
