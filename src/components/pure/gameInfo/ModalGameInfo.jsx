@@ -6,7 +6,7 @@ import { Streamer } from '../../../models/streamer.class'
 
 function ModalGameInfo({ show, handleClose}) {
     const streamer = new Streamer('4', 'Knekro', '32', '1000000' , 'M', 'ES', 'TW')
-    const streamerGuess = new Streamer('4', 'Ibai', '24', '12000000' , 'M', 'MX', 'TW')
+    const streamerGuess = new Streamer('4', 'Ibai', '24', '12000000' , 'M', 'ES', 'YT')
 
     return (
         <>
