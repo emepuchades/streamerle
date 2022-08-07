@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import allStreamersList from "../../streamerList.json";
+import allStreamersList from "../streamerList.json";
 
 function ListStreamers({ selectStreaamer, value }) {
   const [filteredStreamers, setFilteredStreamers] = useState()

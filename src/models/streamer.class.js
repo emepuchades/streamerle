@@ -1,13 +1,13 @@
 export class Streamer {
-    id='';
-    name='';
-    birthday='';
-    followers='';
-    city='';
-    gender='';
-    platform='';
+    id = '';
+    name = '';
+    birthday = '';
+    followers = '';
+    city = '';
+    gender = '';
+    platform = '';
 
-    constructor(id, name, birthday, followers, gender, city, platform){
+    constructor(id, name, birthday, followers, gender, city, platform) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;

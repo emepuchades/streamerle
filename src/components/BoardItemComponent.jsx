@@ -1,5 +1,5 @@
 import React from 'react'
-import startLogo from '../../assets/icon-start.png';
+import startLogo from '../assets/icon-start.png';
 import Item from './Item';
 
 function BoardItemComponent({ streamers, streamerGuess }) {

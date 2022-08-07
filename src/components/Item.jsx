@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactCountryFlag from "react-country-flag";
 
-function Item({streamer, streamerGuess}) {
-   
+function Item({ streamer, streamerGuess }) {
+
     function nFormatter(num) {
         const lookup = [
             { value: 1, symbol: "" },

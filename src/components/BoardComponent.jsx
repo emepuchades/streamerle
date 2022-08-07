@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import BoardItemComponent from './pure/BoardItemComponent.jsx'
+import BoardItemComponent from './BoardItemComponent.jsx'
 import AddStreamer from './forms/AddStreamer.jsx'
 import { Streamer } from '../models/streamer.class'
-import allStreamers from "../streamerInfo.json";
-import ListStreamers from './pure/ListStreamers.jsx';
+import ListStreamers from './ListStreamers.jsx';
 import Header from './pure/Header.jsx';
-import GameOver from './pure/gameInfo/GameOver.jsx';
+import GameOver from './gameInfo/GameOver.jsx';
+import allStreamers from "../streamerInfo.json";
+import { updateLocalStorage, localStoragedefault } from '../utils/LocalStorage.jsx';
+import { getRandomStreamer } from '../utils/GetRandomStreamer.jsx';
 
 function BoardComponent() {
     const tryNumbers = 5;
@@ -17,82 +19,30 @@ function BoardComponent() {
     const isModalShow = () => setGameOver(!gameOver);
 
     useEffect(() => {
-        const min = 0;
-        const max = 5;
-        const rand = Math.floor(Math.random() * (max - min + 1)) + min;
-        const streamer = allStreamers[rand]
+        const streamer = getRandomStreamer()
         const age = ageCalculate(streamer.birthday)
-
         const statsLocal = JSON.parse(localStorage.getItem('stats'));
-        
+
         if (!statsLocal) {
-            localStorage.setItem('stats', JSON.stringify([0, 0, 0, 0]));
-            localStorage.setItem('gameWons', JSON.stringify(0));
-            localStorage.setItem('gamePlays', JSON.stringify(0));
-            localStorage.setItem('winDistribution', JSON.stringify([0,0,0,0,0]));
+            localStoragedefault()
         }
+
         return (
             setStreamerGuess(new Streamer(streamer.id, streamer.name, age, streamer.followers, streamer.gender, streamer.city, streamer.platform)
             )
         )
     }, []);
 
-    function updateLocalStorage(isWon) {
-        const statsLocal = JSON.parse(localStorage.getItem('stats'));
-        const numGames = JSON.parse(localStorage.getItem('gamePlays'));
-        const gameWon = JSON.parse(localStorage.getItem('gameWons'));
-        const winDistribution = JSON.parse(localStorage.getItem('winDistribution'));
-        const numTry = tryStreamers.length
-
-        const newWin = winDistribution.map((position, index) => {
-            if (numTry === index) {
-               return  position + 1
-            }
-            return position
-        })
-
-        localStorage.setItem('lastGameDate', JSON.stringify(new Date()));
-        localStorage.setItem('lastStreamer', JSON.stringify(streamerGuess.name));
-        localStorage.setItem('isWon', JSON.stringify(isWon));
-        if(isWon){localStorage.setItem('gameWons', JSON.stringify(gameWon + 1));}
-        localStorage.setItem('winDistribution', JSON.stringify(newWin));
-        localStorage.setItem('gamePlays', JSON.stringify(numGames + 1));
-        
-        updateStats(statsLocal, isWon)
-    }
-
-    function updateStats(oldStats, isWon) {
-        const newStats = []
-        const gameWon = JSON.parse(localStorage.getItem('gameWons'));
-        const gamePlays = JSON.parse(localStorage.getItem('gamePlays'));
-        const winrate = (gameWon / gamePlays) * 100;
-        
-        newStats.push(oldStats[0] + 1)
-        newStats.push(winrate.toFixed(0))
-        
-        isWon ?
-            newStats.push(oldStats[2] + 1)
-            : newStats.push(0)
-        
-        if(oldStats[3] < newStats[2])  {
-            newStats.push(newStats[2])
-        } else {
-            newStats.push(oldStats[3])
-        }
-
-        localStorage.setItem('stats', JSON.stringify(newStats));
-    }
-
     function boardAddStreamer(tryStreamer) {
         if (streamerGuess.name.toLowerCase() === tryStreamer.name.toLowerCase()) {
-            updateLocalStorage(true)
+            updateLocalStorage(true, streamerGuess, tryStreamers)
             setGameOver(true)
         } else {
 
             if (tryStreamers.length < tryNumbers) {
                 findStreamer(tryStreamer.id)
             } else {
-                updateLocalStorage(false)
+                updateLocalStorage(false, streamerGuess, tryStreamers)
                 setGameOver(true)
             }
         }
@@ -136,7 +86,7 @@ function BoardComponent() {
             {
                 gameOver ?
                     <GameOver show={gameOver} handleClose={isModalShow} />
-                : null}
+                    : null}
         </div>
     )
 }

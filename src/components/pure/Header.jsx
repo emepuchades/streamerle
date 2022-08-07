@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import GameOver from './gameInfo/GameOver';
-import ModalGameInfo from './gameInfo/ModalGameInfo';
+import GameOver from '../gameInfo/GameOver';
+import ModalGameInfo from '../gameInfo/ModalGameInfo';
 
 function Header() {
     const [show, setShow] = useState(false);
@@ -28,14 +28,14 @@ function Header() {
                     <h1 className="text-2xl font-bold dark:text-white">Streamerle</h1>
                 </div>
                 <div className="right-icons">
-                <button onClick={() => isModalShowGameOver()} type="button" className="button-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-reception-4" viewBox="0 0 16 16">
-                        <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z" />
-                    </svg>
-                </button>
+                    <button onClick={() => isModalShowGameOver()} type="button" className="button-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-reception-4" viewBox="0 0 16 16">
+                            <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v11a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-11z" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <GameOver show={showGameOver} handleClose={handleCloseGameOver}/>
+            <GameOver show={showGameOver} handleClose={handleCloseGameOver} />
             <ModalGameInfo show={show} handleClose={handleClose} />
         </div>
     )
