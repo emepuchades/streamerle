@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { ProgressBar } from 'react-bootstrap';
+import ShareButtons from '../share/ShareButtons';
 
 export default function GameOver({ show, handleClose }) {
   const stats = JSON.parse(localStorage.getItem('stats'));
@@ -54,6 +55,9 @@ export default function GameOver({ show, handleClose }) {
                   :
                   <p> Todavía no tienes estadísticas. Selecciona un streamer para empezar la partida.</p>}
               </div>
+            </div>
+            <div>
+              <ShareButtons/>
             </div>
           </div>
         </Modal.Body>

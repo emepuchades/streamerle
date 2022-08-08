@@ -53,5 +53,41 @@
         "gender": "M",
         "followers": "17200000",
         "platform":"YT"
+    },
+    {
+        "id": 6,
+        "name": "Quackity",
+        "birthday": "2000-12-28T00:00:00",
+        "city": "MX",
+        "gender": "M",
+        "followers": "2600000",
+        "platform":"TW"
+    },
+    {
+        "id": 7,
+        "name": "IlloJuan",
+        "birthday": "1994-06-22T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "2300000",
+        "platform":"TW"
+    },
+    {
+        "id": 8,
+        "name": "luzugames",
+        "birthday": "1985-08-03T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "2500000",
+        "platform":"TW"
+    },
+    {
+        "id": 9,
+        "name": "AuronPlay",
+        "birthday": "1988-11-05T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "13400000",
+        "platform":"TW"
     }
 ]

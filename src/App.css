@@ -189,6 +189,30 @@
   font-size: 25px;
 }
 
+.social-container {
+  display: flex;
+  width: 100%;
+  margin: 15px;
+  margin-top: 50px;
+}
+
+.share-buttons {
+  width: 100%;
+}
+
+.countdown {
+  width: 100%;
+}
+
+.icons-share {
+  margin-right: 15px;
+}
+
+.text-share {
+  font-weight: bolder;
+  font-size: 19px;
+}
+
 @media (min-width: 640px) {
   .sm\:mt-6 {
     margin-top: 1.5rem;
