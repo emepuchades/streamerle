@@ -2,6 +2,9 @@
 # Streamerle
 
 This is a Wordle type game, where you have to guess the streamer. According to selects a streamer you will have clues as if the followers are more or less than the chosen streamer, what nationality is he or how old he is.
+<br>
+
+You can see the project in: https://streamerle.vercel.app/
 
 ## Technologies
 
