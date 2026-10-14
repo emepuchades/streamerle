@@ -56,7 +56,7 @@ function winRateTrys(tryStreamers) {
     const numTry = tryStreamers.length
 
     const newWin = winDistribution.map((attempt, index) => {
-        if (numTry === index) {
+        if (numTry - 1 === index) {
             return attempt + 1
         }
         return attempt

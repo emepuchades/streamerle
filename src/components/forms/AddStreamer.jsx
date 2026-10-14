@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-function AddStreamer({ uploadInput, valueInput }) {
+function AddStreamer({ uploadInput, valueInput, disabled }) {
     const nameRef = useRef('');
 
     function AddStreamer(e) {
@@ -9,7 +9,7 @@ function AddStreamer({ uploadInput, valueInput }) {
     }
     return (
         <form className='container-input' onSubmit={(e) => e.preventDefault()}>
-            <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} placeholder='Busca al streamer' />
+            <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} disabled={disabled} placeholder='Busca al streamer' />
         </form>
     )
 }

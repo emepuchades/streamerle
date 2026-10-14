@@ -9,66 +9,58 @@ import allStreamers from "../streamerInfo.json";
 import { updateLocalStorage, localStoragedefault } from '../utils/LocalStorage.jsx';
 import { getRandomStreamer } from '../utils/GetRandomStreamer.jsx';
 
+function ageCalculate(date) {
+    var today = new Date();
+    var birthday = new Date(date);
+    var age = today.getFullYear() - birthday.getFullYear();
+    var m = today.getMonth() - birthday.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+function createStreamer(streamer) {
+    const age = ageCalculate(streamer.birthday)
+    return new Streamer(streamer.id, streamer.name, age, streamer.followers, streamer.gender, streamer.city, streamer.platform)
+}
+
 function BoardComponent() {
     const tryNumbers = 5;
     const [streamerGuess, setStreamerGuess] = useState()
     const [valueInput, setValueInput] = useState('')
     const [tryStreamers, setTryStreamers] = useState([])
     const [gameOver, setGameOver] = useState(false)
+    const [isWon, setIsWon] = useState(false)
+    const [showGameOver, setShowGameOver] = useState(false)
 
-    const isModalShow = () => setGameOver(!gameOver);
+    const handleCloseGameOver = () => setShowGameOver(false);
 
     useEffect(() => {
-        const streamer = getRandomStreamer()
-        const age = ageCalculate(streamer.birthday)
         const statsLocal = JSON.parse(localStorage.getItem('stats'));
 
         if (!statsLocal) {
             localStoragedefault()
         }
 
-        return (
-            setStreamerGuess(new Streamer(streamer.id, streamer.name, age, streamer.followers, streamer.gender, streamer.city, streamer.platform)
-            )
-        )
+        setStreamerGuess(createStreamer(getRandomStreamer()))
     }, []);
 
     function boardAddStreamer(tryStreamer) {
-        if (streamerGuess.name.toLowerCase() === tryStreamer.name.toLowerCase()) {
-            updateLocalStorage(true, streamerGuess, tryStreamers)
-            setGameOver(true)
-        } else {
+        const tryStreamersTemp = [...tryStreamers, createStreamer(allStreamers[tryStreamer.id])]
+        const isWonTry = streamerGuess.id === tryStreamer.id
 
-            if (tryStreamers.length < tryNumbers) {
-                findStreamer(tryStreamer.id)
-            } else {
-                updateLocalStorage(false, streamerGuess, tryStreamers)
-                setGameOver(true)
-            }
-        }
-    }
-
-    function ageCalculate(date) {
-        var today = new Date();
-        var birthday = new Date(date);
-        var age = today.getFullYear() - birthday.getFullYear();
-        var m = today.getMonth() - birthday.getMonth();
-
-        if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
-            age--;
-        }
-
-        return age;
-    }
-
-    function findStreamer(id) {
-        const foundStreamer = allStreamers[id]
-        const tryStreamersTemp = [...tryStreamers]
-        const age = ageCalculate(foundStreamer.birthday)
-        const newStreamerTry = new Streamer(foundStreamer.id, foundStreamer.name, age, foundStreamer.followers, foundStreamer.gender, foundStreamer.city, foundStreamer.platform)
-        tryStreamersTemp.push(newStreamerTry)
         setTryStreamers(tryStreamersTemp)
         setValueInput('')
+
+        if (isWonTry || tryStreamersTemp.length === tryNumbers) {
+            updateLocalStorage(isWonTry, streamerGuess, tryStreamersTemp)
+            setIsWon(isWonTry)
+            setGameOver(true)
+            setShowGameOver(true)
+        }
     }
 
     function changeInput(value) {
@@ -78,18 +70,24 @@ function BoardComponent() {
     return (
         <div className='board'>
             <Header />
-            <AddStreamer uploadInput={changeInput} valueInput={valueInput} />
+            <AddStreamer uploadInput={changeInput} valueInput={valueInput} disabled={gameOver} />
             {valueInput ?
                 <ListStreamers selectStreaamer={boardAddStreamer} value={valueInput} /> : null
             }
+            {gameOver && streamerGuess ?
+                <p className='game-result'>
+                    {isWon ? '¡Lo has adivinado! Era ' : 'Esta vez no ha podido ser. Era '}
+                    <strong>{streamerGuess.name}</strong>
+                </p>
+                : null
+            }
             <BoardItemComponent streamers={tryStreamers} streamerGuess={streamerGuess} />
             {
-                gameOver ?
-                    <GameOver show={gameOver} handleClose={isModalShow} />
+                showGameOver ?
+                    <GameOver show={showGameOver} handleClose={handleCloseGameOver} />
                     : null}
         </div>
     )
 }
 
 export default BoardComponent
-
