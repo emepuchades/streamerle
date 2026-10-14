@@ -78,7 +78,7 @@ function BoardComponent() {
     return (
         <div className='board'>
             <Header />
-            <AddStreamer uploadInput={changeInput} value={valueInput} />
+            <AddStreamer uploadInput={changeInput} valueInput={valueInput} />
             {valueInput ?
                 <ListStreamers selectStreaamer={boardAddStreamer} value={valueInput} /> : null
             }
