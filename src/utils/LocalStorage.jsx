@@ -41,13 +41,14 @@ function updateStats(oldStats, isWon) {
         oldStats.gamesWon = oldStats.gamesWon + 1;
         oldStats.currentStreak = oldStats.currentStreak + 1;
     } else {
-        if (oldStats.currentStreak > oldStats.betterStreak) {
-            oldStats.betterStreak = oldStats.currentStreak
-        }
         oldStats.currentStreak = 0
     }
+
+    if (oldStats.currentStreak > oldStats.betterStreak) {
+        oldStats.betterStreak = oldStats.currentStreak
+    }
+
     oldStats.winRate = winrate.toFixed(0)
-    console.log('oldStats', oldStats)
     localStorage.setItem('stats', JSON.stringify(oldStats));
 }
 

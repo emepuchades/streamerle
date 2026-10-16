@@ -6,7 +6,9 @@ import ShareButtons from '../share/ShareButtons';
 
 export default function GameOver({ show, handleClose }) {
   const stats = JSON.parse(localStorage.getItem('stats'));
+  const gamePlays = JSON.parse(localStorage.getItem('gamePlays'));
   const winRate = JSON.parse(localStorage.getItem('winRate'));
+  const maxWins = winRate ? Math.max(...winRate, 1) : 1;
 
   return (
     <>
@@ -22,7 +24,7 @@ export default function GameOver({ show, handleClose }) {
                 <tr>
                   {stats ?
                     <>
-                      <td className='stats-info'> {stats.gamesWon} </td>
+                      <td className='stats-info'> {gamePlays} </td>
                       <td className='stats-info'> {stats.winRate} %</td>
                       <td className='stats-info'> {stats.currentStreak} </td>
                       <td className='stats-info'> {stats.betterStreak} </td>
@@ -47,7 +49,7 @@ export default function GameOver({ show, handleClose }) {
                     return (
                       <div className='stats-percentage' key={index}>
                         <div className='item-stats'>{index + 1}: </div>
-                        <div className='progress-bar'><ProgressBar now={wins} /></div>
+                        <div className='stats-bar'><ProgressBar now={wins} max={maxWins} /></div>
                         <div className='item-stats'>{wins}</div>
                       </div>
                     )
