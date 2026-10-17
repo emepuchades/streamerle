@@ -21,6 +21,7 @@ export function updateLocalStorage(isWon, streamerGuess, tryStreamers) {
 
     localStorage.setItem('lastGameDate', JSON.stringify(new Date()));
     localStorage.setItem('lastStreamer', JSON.stringify(streamerGuess.name));
+    localStorage.setItem('lastTries', JSON.stringify(tryStreamers.map((streamer) => streamer.id)));
     localStorage.setItem('isWon', JSON.stringify(isWon));
     localStorage.setItem('gamePlays', JSON.stringify(numGames + 1));
 
@@ -30,6 +31,19 @@ export function updateLocalStorage(isWon, streamerGuess, tryStreamers) {
     }
 
     updateStats(statsLocal, isWon)
+}
+
+export function getTodayGame() {
+    const lastGameDate = JSON.parse(localStorage.getItem('lastGameDate'));
+
+    if (!lastGameDate || new Date(lastGameDate).toDateString() !== new Date().toDateString()) {
+        return null
+    }
+
+    return {
+        isWon: JSON.parse(localStorage.getItem('isWon')),
+        tryIds: JSON.parse(localStorage.getItem('lastTries')) || [],
+    }
 }
 
 function updateStats(oldStats, isWon) {

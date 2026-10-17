@@ -9,7 +9,7 @@ function AddStreamer({ uploadInput, valueInput, disabled }) {
     }
     return (
         <form className='container-input' onSubmit={(e) => e.preventDefault()}>
-            <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} disabled={disabled} placeholder='Busca al streamer' />
+            <input className='input-add-streamer' type="text" ref={nameRef} value={valueInput} onChange={AddStreamer} disabled={disabled} placeholder={disabled ? 'Vuelve mañana para otra partida' : 'Busca al streamer'} />
         </form>
     )
 }

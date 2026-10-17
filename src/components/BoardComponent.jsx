@@ -6,8 +6,8 @@ import ListStreamers from './ListStreamers.jsx';
 import Header from './pure/Header.jsx';
 import GameOver from './gameInfo/GameOver.jsx';
 import allStreamers from "../streamerInfo.json";
-import { updateLocalStorage, localStoragedefault } from '../utils/LocalStorage.jsx';
-import { getRandomStreamer } from '../utils/GetRandomStreamer.jsx';
+import { updateLocalStorage, localStoragedefault, getTodayGame } from '../utils/LocalStorage.jsx';
+import { getDailyStreamer } from '../utils/GetDailyStreamer.jsx';
 
 function ageCalculate(date) {
     var today = new Date();
@@ -40,12 +40,19 @@ function BoardComponent() {
 
     useEffect(() => {
         const statsLocal = JSON.parse(localStorage.getItem('stats'));
+        const todayGame = getTodayGame()
 
         if (!statsLocal) {
             localStoragedefault()
         }
 
-        setStreamerGuess(createStreamer(getRandomStreamer()))
+        setStreamerGuess(createStreamer(getDailyStreamer()))
+
+        if (todayGame) {
+            setTryStreamers(todayGame.tryIds.map((id) => createStreamer(allStreamers[id])))
+            setIsWon(todayGame.isWon)
+            setGameOver(true)
+        }
     }, []);
 
     function boardAddStreamer(tryStreamer) {
