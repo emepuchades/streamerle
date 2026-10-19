@@ -8,6 +8,7 @@ import GameOver from './gameInfo/GameOver.jsx';
 import allStreamers from "../streamerInfo.json";
 import { updateLocalStorage, localStoragedefault, getTodayGame } from '../utils/LocalStorage.jsx';
 import { getDailyStreamer } from '../utils/GetDailyStreamer.jsx';
+import { getShareResult } from '../utils/ShareResult.jsx';
 
 function ageCalculate(date) {
     var today = new Date();
@@ -91,7 +92,11 @@ function BoardComponent() {
             <BoardItemComponent streamers={tryStreamers} streamerGuess={streamerGuess} />
             {
                 showGameOver ?
-                    <GameOver show={showGameOver} handleClose={handleCloseGameOver} />
+                    <GameOver
+                        show={showGameOver}
+                        handleClose={handleCloseGameOver}
+                        shareResult={getShareResult(isWon, tryStreamers, streamerGuess, tryNumbers)}
+                    />
                     : null}
         </div>
     )

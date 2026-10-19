@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { ProgressBar } from 'react-bootstrap';
 import ShareButtons from '../share/ShareButtons';
 
-export default function GameOver({ show, handleClose }) {
+export default function GameOver({ show, handleClose, shareResult }) {
   const stats = JSON.parse(localStorage.getItem('stats'));
   const gamePlays = JSON.parse(localStorage.getItem('gamePlays'));
   const winRate = JSON.parse(localStorage.getItem('winRate'));
@@ -58,9 +58,12 @@ export default function GameOver({ show, handleClose }) {
                   <p> Todavía no tienes estadísticas. Selecciona un streamer para empezar la partida.</p>}
               </div>
             </div>
-            <div>
-              <ShareButtons/>
-            </div>
+            {shareResult ?
+              <div>
+                <ShareButtons shareResult={shareResult} />
+              </div>
+              : null
+            }
           </div>
         </Modal.Body>
         <Modal.Footer>
