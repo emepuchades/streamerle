@@ -15,7 +15,7 @@ function Item({ streamer, streamerGuess }) {
         var item = lookup.slice().reverse().find(function (item) {
             return num >= item.value;
         });
-        return item ? (num / item.value).toFixed(0).replace(rx, "$1") + item.symbol : "0";
+        return item ? (num / item.value).toFixed(1).replace(rx, "$1") + item.symbol : "0";
     }
 
     function getPlatform(platform) {
@@ -27,6 +27,13 @@ function Item({ streamer, streamerGuess }) {
         }
     }
 
+    function getArrow(tryValue, guessValue) {
+        if (parseInt(tryValue) === parseInt(guessValue)) {
+            return null
+        }
+        return parseInt(guessValue) < parseInt(tryValue) ? <i className="bi bi-arrow-down"></i> : <i className="bi bi-arrow-up"></i>
+    }
+
     return (
         <div className="container-board-answers">
             <div className="container-name">
@@ -34,32 +41,36 @@ function Item({ streamer, streamerGuess }) {
                     {streamer.name}
                 </div>
             </div>
-            <div className="continer-answer">
-                <div className={streamer.birthday === streamerGuess.birthday ? 'answer suucess' : 'answer color-answer'} >
-                    {streamer.birthday === streamerGuess.birthday ? null :
-                        streamerGuess.birthday < streamer.birthday ? <i className="bi bi-arrow-down"></i> : <i className="bi bi-arrow-up"></i>}
+            <div className="container-answer">
+                <div className={parseInt(streamer.birthday) === parseInt(streamerGuess.birthday) ? 'answer success' : 'answer color-answer'} >
+                    {getArrow(streamer.birthday, streamerGuess.birthday)}
                     {streamer.birthday}
                 </div>
             </div>
-            <div className="continer-answer">
-                <div className="answer color-answer">
-                    {parseInt(streamerGuess.followers) < parseInt(streamer.followers) ? <i className="bi bi-arrow-down"></i> : <i className="bi bi-arrow-up"></i>}
-                    {nFormatter(streamer.followers, streamer.followers.length)}
+            <div className="container-answer">
+                <div className={parseInt(streamer.followers) === parseInt(streamerGuess.followers) ? 'answer success' : 'answer color-answer'}>
+                    {getArrow(streamer.followers, streamerGuess.followers)}
+                    {nFormatter(streamer.followers)}
                 </div>
             </div>
-            <div className='continer-answer'>
-                <div className={streamer.gender === streamerGuess.gender ? 'answer suucess' : 'answer error'}>
+            <div className='container-answer'>
+                <div className={streamer.gender === streamerGuess.gender ? 'answer success' : 'answer error'}>
                     {streamer.gender}
                 </div>
             </div>
-            <div className='continer-answer'>
-                <div className={streamer.platform === streamerGuess.platform ? 'answer suucess' : 'answer error'}>
+            <div className='container-answer'>
+                <div className={streamer.platform === streamerGuess.platform ? 'answer success' : 'answer error'}>
                     {getPlatform(streamer.platform)}
                 </div>
             </div>
-            <div className='continer-answer'>
-                <div className={streamer.city === streamerGuess.city ? 'answer suucess' : 'answer error'}>
-                    <ReactCountryFlag countryCode={streamer.city} />
+            <div className='container-answer'>
+                <div className={streamer.city === streamerGuess.city ? 'answer success' : 'answer error'}>
+                    <ReactCountryFlag
+                        countryCode={streamer.city}
+                        svg
+                        title={streamer.city}
+                        style={{ width: '1.9em', height: '1.9em', borderRadius: '9999px', objectFit: 'cover' }}
+                    />
                 </div>
             </div>
         </div>

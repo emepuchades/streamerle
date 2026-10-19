@@ -13,7 +13,7 @@
   padding: 10px;
 }
 
-.suucess {
+.success {
   background-color: #67a561;
 }
 
@@ -90,7 +90,7 @@
   line-height: 1.75rem;
 }
 
-.continer-answer {
+.container-answer {
   display: flex;
   width: 20%;
   flex-shrink: 0;
