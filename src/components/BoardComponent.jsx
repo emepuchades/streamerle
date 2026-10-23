@@ -78,10 +78,12 @@ function BoardComponent() {
     return (
         <div className='board'>
             <Header />
-            <AddStreamer uploadInput={changeInput} valueInput={valueInput} disabled={gameOver} />
-            {valueInput ?
-                <ListStreamers selectStreaamer={boardAddStreamer} value={valueInput} /> : null
-            }
+            <div className='search-container'>
+                <AddStreamer uploadInput={changeInput} valueInput={valueInput} disabled={gameOver} />
+                {valueInput ?
+                    <ListStreamers selectStreaamer={boardAddStreamer} value={valueInput} /> : null
+                }
+            </div>
             {gameOver && streamerGuess ?
                 <p className='game-result'>
                     {isWon ? '¡Lo has adivinado! Era ' : 'Esta vez no ha podido ser. Era '}

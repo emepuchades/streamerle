@@ -14,7 +14,7 @@ function ListStreamers({ selectStreaamer, value }) {
   }, [value]);
 
   return (
-    <div className="list-group container-board">
+    <div className="list-group list-streamers">
       {filteredStreamers ?
         filteredStreamers.map((streamer, index) => {
           return (
