@@ -14,7 +14,7 @@ export default function GameOver({ show, handleClose, shareResult }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Streamle</Modal.Title>
+          <Modal.Title>Streamerle</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
