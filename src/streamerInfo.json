@@ -5,7 +5,7 @@
         "birthday": "1984-04-23T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "834830",
+        "followers": "1290000",
         "platform":"TW"
     },
     {
@@ -14,7 +14,7 @@
         "birthday": "1990-02-13T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "12500000",
+        "followers": "16410000",
         "platform":"TW"
     },
     {
@@ -23,7 +23,7 @@
         "birthday": "1998-07-23T00:00:00",
         "city": "MX",
         "gender": "M",
-        "followers": "4600000",
+        "followers": "11080000",
         "platform":"TW"
 
     },
@@ -33,7 +33,7 @@
         "birthday": "1995-03-26T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "11300000",
+        "followers": "19850000",
         "platform":"TW"
     },
     {
@@ -42,7 +42,7 @@
         "birthday": "1998-02-28T00:00:00",
         "city": "MX",
         "gender": "F",
-        "followers": "4700000",
+        "followers": "7180000",
         "platform":"TW"
     },
     {
@@ -51,7 +51,7 @@
         "birthday": "1993-05-09T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "17200000",
+        "followers": "18700000",
         "platform":"YT"
     },
     {
@@ -60,7 +60,7 @@
         "birthday": "2000-12-28T00:00:00",
         "city": "MX",
         "gender": "M",
-        "followers": "2600000",
+        "followers": "6600000",
         "platform":"TW"
     },
     {
@@ -69,7 +69,7 @@
         "birthday": "1994-06-22T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "2300000",
+        "followers": "4650000",
         "platform":"TW"
     },
     {
@@ -87,7 +87,115 @@
         "birthday": "1988-11-05T00:00:00",
         "city": "ES",
         "gender": "M",
-        "followers": "13400000",
+        "followers": "17010000",
+        "platform":"TW"
+    },
+    {
+        "id": 10,
+        "name": "TheGrefg",
+        "birthday": "1997-04-24T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "12300000",
+        "platform":"TW"
+    },
+    {
+        "id": 11,
+        "name": "Vegetta777",
+        "birthday": "1989-04-12T00:00:00",
+        "city": "ES",
+        "gender": "M",
+        "followers": "34700000",
+        "platform":"YT"
+    },
+    {
+        "id": 12,
+        "name": "Cristinini",
+        "birthday": "1989-11-15T00:00:00",
+        "city": "ES",
+        "gender": "F",
+        "followers": "3000000",
+        "platform":"TW"
+    },
+    {
+        "id": 13,
+        "name": "Juansguarnizo",
+        "birthday": "1997-01-11T00:00:00",
+        "city": "CO",
+        "gender": "M",
+        "followers": "11000000",
+        "platform":"TW"
+    },
+    {
+        "id": 14,
+        "name": "LuisitoComunica",
+        "birthday": "1991-03-20T00:00:00",
+        "city": "MX",
+        "gender": "M",
+        "followers": "46000000",
+        "platform":"YT"
+    },
+    {
+        "id": 15,
+        "name": "JuegaGerman",
+        "birthday": "1990-04-25T00:00:00",
+        "city": "CL",
+        "gender": "M",
+        "followers": "56500000",
+        "platform":"YT"
+    },
+    {
+        "id": 16,
+        "name": "Spreen",
+        "birthday": "2000-10-11T00:00:00",
+        "city": "AR",
+        "gender": "M",
+        "followers": "1400000",
+        "platform":"KI"
+    },
+    {
+        "id": 17,
+        "name": "Coscu",
+        "birthday": "1991-08-03T00:00:00",
+        "city": "AR",
+        "gender": "M",
+        "followers": "540000",
+        "platform":"KI"
+    },
+    {
+        "id": 18,
+        "name": "Westcol",
+        "birthday": "2001-02-02T00:00:00",
+        "city": "CO",
+        "gender": "M",
+        "followers": "1840000",
+        "platform":"KI"
+    },
+    {
+        "id": 19,
+        "name": "Rivers",
+        "birthday": "1998-08-20T00:00:00",
+        "city": "MX",
+        "gender": "F",
+        "followers": "6400000",
+        "platform":"TW"
+    },
+    {
+        "id": 20,
+        "name": "Gemita",
+        "birthday": "1995-08-05T00:00:00",
+        "city": "ES",
+        "gender": "F",
+        "followers": "932000",
+        "platform":"TW"
+    },
+    {
+        "id": 21,
+        "name": "Nissaxter",
+        "birthday": "1994-04-04T00:00:00",
+        "city": "ES",
+        "gender": "F",
+        "followers": "858000",
         "platform":"TW"
     }
 ]

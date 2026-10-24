@@ -22,6 +22,8 @@ function Item({ streamer, streamerGuess }) {
         switch (platform) {
             case 'TW':
                 return <i className="bi bi-twitch"></i>;
+            case 'KI':
+                return <span className='kick-icon'>K</span>;
             default:
                 return <i className="bi bi-youtube"></i>
         }

@@ -5,5 +5,6 @@ export function getDailyStreamer() {
     const firstDay = Date.UTC(2022, 0, 1);
     const todayDay = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
     const days = Math.floor((todayDay - firstDay) / (1000 * 60 * 60 * 24));
-    return allStreamers[days % allStreamers.length]
+    const rand = Math.abs(Math.sin(days) * 10000) % 1;
+    return allStreamers[Math.floor(rand * allStreamers.length)]
 }
