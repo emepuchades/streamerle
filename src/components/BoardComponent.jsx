@@ -91,7 +91,7 @@ function BoardComponent() {
                 </p>
                 : null
             }
-            <BoardItemComponent streamers={tryStreamers} streamerGuess={streamerGuess} />
+            <BoardItemComponent streamers={tryStreamers} streamerGuess={streamerGuess} tryNumbers={tryNumbers} />
             {
                 showGameOver ?
                     <GameOver
