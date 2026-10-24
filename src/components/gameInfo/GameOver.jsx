@@ -12,7 +12,7 @@ export default function GameOver({ show, handleClose, shareResult }) {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Streamerle</Modal.Title>
         </Modal.Header>
@@ -25,7 +25,7 @@ export default function GameOver({ show, handleClose, shareResult }) {
                   {stats ?
                     <>
                       <td className='stats-info'> {gamePlays} </td>
-                      <td className='stats-info'> {stats.winRate} %</td>
+                      <td className='stats-info'> {stats.winRate}%</td>
                       <td className='stats-info'> {stats.currentStreak} </td>
                       <td className='stats-info'> {stats.betterStreak} </td>
                     </>
@@ -34,10 +34,10 @@ export default function GameOver({ show, handleClose, shareResult }) {
 
                 </tr>
                 <tr>
-                  <td> Partidas Jugadas </td>
-                  <td> Win Rate </td>
-                  <td> Racha Actual </td>
-                  <td> Mejor Racha </td>
+                  <td className='stats-label'> Partidas Jugadas </td>
+                  <td className='stats-label'> Win Rate </td>
+                  <td className='stats-label'> Racha Actual </td>
+                  <td className='stats-label'> Mejor Racha </td>
                 </tr>
               </tbody>
             </table>
@@ -48,7 +48,7 @@ export default function GameOver({ show, handleClose, shareResult }) {
                   winRate.map((wins, index) => {
                     return (
                       <div className='stats-percentage' key={index}>
-                        <div className='item-stats'>{index + 1}: </div>
+                        <div className='item-stats'>{index + 1}</div>
                         <div className='stats-bar'><ProgressBar now={wins} max={maxWins} /></div>
                         <div className='item-stats'>{wins}</div>
                       </div>
@@ -67,7 +67,7 @@ export default function GameOver({ show, handleClose, shareResult }) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleClose}>
             ¡A jugar!
           </Button>
         </Modal.Footer>

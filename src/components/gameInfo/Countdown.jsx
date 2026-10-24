@@ -8,7 +8,7 @@ function CountdownCompoent() {
         if (completed) {
             return <p>Ya puedes jugar tontito</p>;
         } else {
-            return <span>{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</span>;
+            return <span className='countdown-time'>{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</span>;
         }
     };
 
