@@ -15,7 +15,14 @@ function BoardItemComponent({ streamers, streamerGuess, tryNumbers }) {
                 <div className='container-board' >
                     <div className="width-full">
                         <div className='container-mb'>
-                            <p className='tries-info'>Intento {streamers.length} de {tryNumbers}</p>
+                            <div className='tries-info'>
+                                {[...Array(tryNumbers)].map((value, index) => {
+                                    return (
+                                        <span key={index} className={index < streamers.length ? 'try-dot try-dot-used' : 'try-dot'}></span>
+                                    )
+                                })}
+                                <span className='tries-text'>{streamers.length}/{tryNumbers}</span>
+                            </div>
                             <div className="answers-labels" >
                                 <div className="default-answer">
                                     AÑOS
@@ -33,14 +40,20 @@ function BoardItemComponent({ streamers, streamerGuess, tryNumbers }) {
                                     PAÍS
                                 </div>
                             </div>
-                            {streamers.map((streamer, index) => {
+                            {[...streamers].reverse().map((streamer) => {
                                 return (
-                                    <div key={index}>
+                                    <div key={streamer.id}>
                                         <Item streamer={streamer} streamerGuess={streamerGuess} />
                                     </div>
                                 )
 
                             })}
+                            <div className='legend'>
+                                <span className='legend-item'><span className='legend-color success'></span>Correcto</span>
+                                <span className='legend-item'><span className='legend-color error'></span>Incorrecto</span>
+                                <span className='legend-item'><i className="bi bi-arrow-up"></i>Tiene más</span>
+                                <span className='legend-item'><i className="bi bi-arrow-down"></i>Tiene menos</span>
+                            </div>
                         </div>
                     </div>
                 </div>

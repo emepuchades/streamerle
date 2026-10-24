@@ -55,7 +55,7 @@ function Item({ streamer, streamerGuess }) {
             </div>
             <div className='container-answer'>
                 <div className={streamer.gender === streamerGuess.gender ? 'answer success' : 'answer error'}>
-                    {streamer.gender}
+                    {streamer.gender === 'F' ? 'Mujer' : 'Hombre'}
                 </div>
             </div>
             <div className='container-answer'>
@@ -69,7 +69,7 @@ function Item({ streamer, streamerGuess }) {
                         countryCode={streamer.city}
                         svg
                         title={streamer.city}
-                        style={{ width: '1.9em', height: '1.9em', borderRadius: '9999px', objectFit: 'cover' }}
+                        style={{ width: '2.2em', height: '1.65em', borderRadius: '5px', objectFit: 'cover' }}
                     />
                 </div>
             </div>

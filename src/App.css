@@ -9,6 +9,7 @@
   color: var(--color-text);
   background:
     radial-gradient(60rem 30rem at 50% -10rem, rgba(145, 71, 255, 0.22), transparent 70%),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 24px 24px,
     var(--color-background);
 }
 
@@ -65,9 +66,56 @@
 }
 
 .tries-info {
-  margin: 28px 0 10px;
-  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 28px 0 14px;
+}
+
+.try-dot {
+  width: 22px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--color-surface-raised);
+}
+
+.try-dot-used {
+  background-color: var(--color-accent);
+}
+
+.tries-text {
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--color-text-muted);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend .bi {
+  color: var(--color-accent);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  box-shadow: none;
 }
 
 .answers-labels {
@@ -133,15 +181,15 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 68px;
+  max-width: 72px;
   overflow: hidden;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 15px;
   line-height: 1.1;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1/1;
-  border-radius: 9999px;
+  border-radius: 14px;
   border: 1px solid transparent;
   color: #fff;
   animation: reveal 0.45s ease-out backwards;
@@ -151,12 +199,17 @@
   font-size: 16px;
 }
 
-.container-answer:nth-child(4) .answer {
+.answer .bi-arrow-up,
+.answer .bi-arrow-down {
+  margin-bottom: 2px;
   font-size: 18px;
+  line-height: 1;
+  color: var(--color-accent);
+  -webkit-text-stroke: 0.5px var(--color-accent);
 }
 
 .container-answer:nth-child(5) .answer .bi {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 .color-answer {
