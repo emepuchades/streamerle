@@ -82,7 +82,7 @@ function BoardComponent() {
             <div className='search-container'>
                 <AddStreamer uploadInput={changeInput} valueInput={valueInput} disabled={gameOver} />
                 {valueInput ?
-                    <ListStreamers selectStreaamer={boardAddStreamer} value={valueInput} /> : null
+                    <ListStreamers selectStreaamer={boardAddStreamer} value={valueInput} tryStreamers={tryStreamers} /> : null
                 }
             </div>
             {gameOver && streamerGuess ?
