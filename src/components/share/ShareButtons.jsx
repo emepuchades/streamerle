@@ -1,11 +1,11 @@
 import React from 'react'
 import {
-    TwitterShareButton,
-    TwitterIcon,
+    XShareButton,
+    XLegacyIcon,
     WhatsappShareButton,
-    WhatsappIcon,
+    WhatsappLegacyIcon,
     TelegramShareButton,
-    TelegramIcon
+    TelegramLegacyIcon
 } from 'react-share'
 import CountdownCompoent from '../gameInfo/Countdown'
 
@@ -20,23 +20,23 @@ function ShareButtons({ shareResult }) {
             </div>
             <div className='share-buttons'>
                 <p className='text-share'> Comparte el resultado </p>
-                <TwitterShareButton
-                    title={shareResult}
+                <XShareButton
+                    text={shareResult}
                     url={urlGame}>
-                    <TwitterIcon size={40} round={true} className='icons-share' />
-                </TwitterShareButton>
+                    <XLegacyIcon size={40} round={true} className='icons-share' />
+                </XShareButton>
 
                 <WhatsappShareButton
-                    title={shareResult}
+                    message={shareResult}
                     url={urlGame}
                     separator={''}>
-                    <WhatsappIcon size={40} round={true} className='icons-share' />
+                    <WhatsappLegacyIcon size={40} round={true} className='icons-share' />
                 </WhatsappShareButton>
 
                 <TelegramShareButton
-                    title={shareResult}
+                    text={shareResult}
                     url={urlGame}>
-                    <TelegramIcon size={40} round={true} className='icons-share' />
+                    <TelegramLegacyIcon size={40} round={true} className='icons-share' />
                 </TelegramShareButton>
             </div>
         </div>
