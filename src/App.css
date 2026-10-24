@@ -290,6 +290,56 @@
   color: var(--color-text-muted);
 }
 
+.game-result {
+  max-width: 32rem;
+  margin: 20px auto 0;
+  padding: 22px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  animation: fade-in-down 0.3s ease-out;
+}
+
+.game-result p {
+  margin: 0;
+}
+
+.game-result-title {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+.game-result-name {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.game-result-tries {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.game-result-countdown {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.game-result-countdown .text-share {
+  margin-bottom: 4px;
+}
+
+.game-result-won {
+  border-color: rgba(47, 191, 113, 0.5);
+  background-color: rgba(47, 191, 113, 0.1);
+}
+
+.game-result-lost {
+  border-color: rgba(229, 72, 77, 0.5);
+  background-color: rgba(229, 72, 77, 0.1);
+}
+
 .before-start {
   margin: 40px auto 10px;
   padding: 0 16px;
@@ -528,6 +578,15 @@
     width: auto;
     margin-left: 12px;
     margin-right: 12px;
+  }
+
+  .game-result {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .game-result-name {
+    font-size: 28px;
   }
 
   .container-mb {

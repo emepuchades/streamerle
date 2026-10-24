@@ -5,6 +5,7 @@ import { Streamer } from '../models/streamer.class'
 import ListStreamers from './ListStreamers.jsx';
 import Header from './pure/Header.jsx';
 import GameOver from './gameInfo/GameOver.jsx';
+import CountdownCompoent from './gameInfo/Countdown.jsx';
 import allStreamers from "../streamerInfo.json";
 import { updateLocalStorage, localStoragedefault, getTodayGame } from '../utils/LocalStorage.jsx';
 import { getDailyStreamer } from '../utils/GetDailyStreamer.jsx';
@@ -85,10 +86,17 @@ function BoardComponent() {
                 }
             </div>
             {gameOver && streamerGuess ?
-                <p className='game-result'>
-                    {isWon ? '¡Lo has adivinado! Era ' : 'Esta vez no ha podido ser. Era '}
-                    <strong>{streamerGuess.name}</strong>
-                </p>
+                <div className={isWon ? 'game-result game-result-won' : 'game-result game-result-lost'}>
+                    <p className='game-result-title'>{isWon ? '¡Lo has adivinado!' : 'Esta vez no ha podido ser'}</p>
+                    <p className='game-result-name'>{streamerGuess.name}</p>
+                    <p className='game-result-tries'>
+                        {isWon ? `En ${tryStreamers.length} de ${tryNumbers} intentos` : `Has usado los ${tryNumbers} intentos`}
+                    </p>
+                    <div className='game-result-countdown'>
+                        <p className='text-share'>Siguiente streamer en</p>
+                        <CountdownCompoent />
+                    </div>
+                </div>
                 : null
             }
             <BoardItemComponent streamers={tryStreamers} streamerGuess={streamerGuess} tryNumbers={tryNumbers} />
