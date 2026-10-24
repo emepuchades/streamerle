@@ -42,13 +42,14 @@ function BoardComponent() {
 
     useEffect(() => {
         const statsLocal = JSON.parse(localStorage.getItem('stats'));
-        const todayGame = getTodayGame()
+        const streamer = getDailyStreamer()
+        const todayGame = getTodayGame(streamer.name)
 
         if (!statsLocal) {
             localStoragedefault()
         }
 
-        setStreamerGuess(createStreamer(getDailyStreamer()))
+        setStreamerGuess(createStreamer(streamer))
 
         if (todayGame) {
             setTryStreamers(todayGame.tryIds.map((id) => createStreamer(allStreamers[id])))

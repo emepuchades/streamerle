@@ -33,16 +33,18 @@ export function updateLocalStorage(isWon, streamerGuess, tryStreamers) {
     updateStats(statsLocal, isWon)
 }
 
-export function getTodayGame() {
+export function getTodayGame(streamerName) {
     const lastGameDate = JSON.parse(localStorage.getItem('lastGameDate'));
+    const lastStreamer = JSON.parse(localStorage.getItem('lastStreamer'));
+    const lastTries = JSON.parse(localStorage.getItem('lastTries'));
 
-    if (!lastGameDate || new Date(lastGameDate).toDateString() !== new Date().toDateString()) {
+    if (!lastGameDate || !lastTries || lastStreamer !== streamerName || new Date(lastGameDate).toDateString() !== new Date().toDateString()) {
         return null
     }
 
     return {
         isWon: JSON.parse(localStorage.getItem('isWon')),
-        tryIds: JSON.parse(localStorage.getItem('lastTries')) || [],
+        tryIds: lastTries,
     }
 }
 
